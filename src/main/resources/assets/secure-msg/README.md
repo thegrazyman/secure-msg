@@ -5,7 +5,7 @@ This mod can encrypt messages between 2 clients so that servers can not read the
 ## Usage
 You and the player you want to message need to have this mod installed and share the same key.  
 To send a player a secure message they need to have an entry in your configuration.
-If they have an entry you can use the /smsg (name) (message) command. If you dont have a player in your entrylist you will get a message that the player has not been found.
+If they have an entry you can use the /smsg (name) (message) command. If you dont have a player in your entrylist you will get an error message that the player has not been found.
 
 
 ### Adding player entries
