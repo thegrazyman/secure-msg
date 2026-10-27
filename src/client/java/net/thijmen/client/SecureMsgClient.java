@@ -31,6 +31,20 @@ public class SecureMsgClient implements ClientModInitializer {
         }
     }
 
+    static {
+        try {
+            for (int i = 0; i < 5; i++) {
+                List<String> list = new ArrayList<String>();
+                list.add("Pieter");
+                list.add("Jan");
+                list.add("Bart");
+                ChatRooms.getChatRooms().add(new ChatRoom("Testroom" + i, list, SecureMsgEncryptionHelper.generateKey()));
+            }
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public static List<PlayerKeyEntry> getPlayerKeyEntries() {
         return playerKeyEntries;
     }

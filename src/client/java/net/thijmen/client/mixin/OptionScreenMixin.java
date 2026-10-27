@@ -5,6 +5,7 @@ import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.gui.screens.options.OptionsScreen;
 import net.minecraft.network.chat.Component;
+import net.thijmen.client.screens.ChatRoomSettingsScreen;
 import net.thijmen.client.screens.KeySettingsScreen;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -22,6 +23,12 @@ public class OptionScreenMixin extends Screen {
         Button button = Button.builder(Component.literal("K"), (btn)-> {
             minecraft.gui.setScreen(new KeySettingsScreen(Component.empty()));
         }).bounds((int) (width * 0.05), (int) (height * 0.05), (int) (width * 0.05), (int) (width * 0.05)).build();
+
+        Button button2 = Button.builder(Component.literal("C"), (btn)-> {
+            minecraft.gui.setScreen(new ChatRoomSettingsScreen(Component.empty()));
+        }).bounds((int) (width * 0.05), (int) (height * 0.15), (int) (width * 0.05), (int) (width * 0.05)).build();
+
         this.addRenderableWidget(button);
+        this.addRenderableWidget(button2);
     }
 }
